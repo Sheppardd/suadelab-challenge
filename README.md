@@ -42,3 +42,13 @@ This app can be run via command line:
 ```
 npm run dev
 ```
+
+## Running ESLint
+
+Run ESLint in `src/*` using `package.json` script:
+
+```
+npm run lint
+```
+
+**Note**: this script also fixes the conflicts (--fix option)
