@@ -1,0 +1,42 @@
+@import "../../assets/scss/colours.scss";
+
+.nav-container {
+  width: 300px;
+  height: 100%;
+  background-color: $primary-dark;
+  padding: 20px;
+
+  .nav-header {
+    color: $general-white;
+    font-size: 18px;
+    margin-bottom: 30px;
+    padding: 5px 10px;
+  }
+
+  .nav-item {
+    border-radius: 3px;
+    margin: 8px 0;
+    padding: 10px 10px;
+    color: $general-white;
+    transition: background-color 0.05s ease-in-out;
+
+    span {
+      font-weight: 700;
+      margin-left: 15px;
+    }
+
+    .nav-item-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      background-color: rgba(0,0,0, $alpha: 0.1);
+      cursor: pointer;
+    }
+  }
+  
+  .active {
+    background-color: rgba(0,0,0, $alpha: 0.1);
+  }
+}
