@@ -2,9 +2,11 @@
 
 .nav-container {
   width: 300px;
+  min-width: 300px;
   height: 100%;
   background-color: $primary-dark;
   padding: 20px;
+  transition: all 0.2s ease-in-out;
 
   .nav-header {
     color: $general-white;
@@ -37,6 +39,6 @@
   }
   
   .active {
-    background-color: rgba(0,0,0, $alpha: 0.1);
+    background-color: $primary-medium !important; // Persist ACTIVE color over hover one
   }
 }
