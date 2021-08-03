@@ -4,7 +4,9 @@
     <Navbar :navitems="navitems" />
 
     <!-- Right side: view info -->
-    <router-view />
+    <div class="just-flex flex-grow child-container">
+      <router-view />
+    </div>
   </div>
 </template>
 
