@@ -2,7 +2,7 @@
   <div class="nav-container">
     <!-- Navigation bar logo + title -->
     <div class="nav-header flex">
-      <div class="logo-container"><img src="../../assets/icons/logo.svg" alt="logo"></div>
+      <div class="logo-container flex"><img src="../../assets/icons/logo.svg" alt="logo"></div>
       <span>Alfonso Mateos</span>
     </div>
 
