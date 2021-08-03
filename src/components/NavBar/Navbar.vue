@@ -36,8 +36,7 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      // TODO: replace to navitems[0].path when dashboard is ready
-      if(!currentView.value) router.push("/people"); // Redirect to view if no current view
+      if(!currentView.value) router.push(props.navitems[0].path); // Redirect to view if no current view
     })
 
     return { currentView, changeView };
