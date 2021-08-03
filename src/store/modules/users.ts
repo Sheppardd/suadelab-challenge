@@ -6,7 +6,7 @@ export default {
     users: [] as User[]
   },
   getters: {
-    getUsers: (state: any) => { return state.users }
+    getUsers: (state: any) => state.users
   },
   mutations: {
     updateUser(state: any, payload: User) {
