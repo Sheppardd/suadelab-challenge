@@ -11,8 +11,24 @@
   .nav-header {
     color: $general-white;
     font-size: 18px;
-    margin-bottom: 30px;
-    padding: 5px 10px;
+    margin: 10px 0 50px 0;
+
+    .logo-container {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    span {
+      font-size: 24px;
+    }
   }
 
   .nav-item {

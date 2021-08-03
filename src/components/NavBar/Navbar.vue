@@ -1,8 +1,9 @@
 <template>
   <div class="nav-container">
     <!-- Navigation bar logo + title -->
-    <div class="nav-header">
-      <h3>Alfonso Mateos</h3>
+    <div class="nav-header flex">
+      <div class="logo-container"><img src="../../assets/icons/logo.svg" alt="logo"></div>
+      <span>Alfonso Mateos</span>
     </div>
 
     <!-- Navigation items: icon + title -->
