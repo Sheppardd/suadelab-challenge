@@ -1,12 +1,13 @@
 <template>
   <div class="nav-container">
     <!-- Navigation bar logo + title -->
-    <div class="nav-header">
-      <h3>Alfonso Mateos</h3>
+    <div class="nav-header flex">
+      <div class="logo-container"><img src="../../assets/icons/logo.svg" alt="logo"></div>
+      <span>Alfonso Mateos</span>
     </div>
 
     <!-- Navigation items: icon + title -->
-    <div v-for="item in navitems" :key="item.title" class="nav-item" v-bind:class="{'active': item.title === currentView}" v-on:click="changeView(item)">
+    <div v-for="item in navitems" :key="item.title" class="nav-item" v-bind:class="{'active': item.title.toLowerCase() === currentView}" v-on:click="changeView(item)">
       <font-awesome-icon :icon="item.icon" class="nav-item-icon"/>
       <span>{{ item.title }}</span>
     </div>
@@ -14,7 +15,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, PropType } from "vue";
+import { defineComponent, PropType, computed, onMounted } from "vue";
+import { useRoute } from "vue-router"; 
 import { NavItem } from "../../models/nav-item";
 import router from "../../router";
 
@@ -27,11 +29,16 @@ export default defineComponent({
     }
   },
   setup: (props) => {
-    let currentView = ref(props.navitems[0].title);
+    const route = useRoute();
+    const currentView = computed(() => route.fullPath.split("/")[1]); // "/path" => "path"
     const changeView = async (navItem: NavItem) => {
-      currentView.value = navItem.title;
       router.push(navItem.path);
     }
+
+    onMounted(() => {
+      // TODO: replace to navitems[0].path when dashboard is ready
+      if(!currentView.value) router.push("/people"); // Redirect to view if no current view
+    })
 
     return { currentView, changeView };
   }

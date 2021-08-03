@@ -2,15 +2,34 @@
 
 .nav-container {
   width: 300px;
+  min-width: 300px;
   height: 100%;
   background-color: $primary-dark;
   padding: 20px;
+  transition: all 0.2s ease-in-out;
 
   .nav-header {
     color: $general-white;
     font-size: 18px;
-    margin-bottom: 30px;
-    padding: 5px 10px;
+    margin: 10px 0 50px 0;
+
+    .logo-container {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    span {
+      font-size: 24px;
+      font-weight: 700;
+    }
   }
 
   .nav-item {
@@ -37,6 +56,6 @@
   }
   
   .active {
-    background-color: rgba(0,0,0, $alpha: 0.1);
+    background-color: $primary-medium !important; // Persist ACTIVE color over hover one
   }
 }
