@@ -1,12 +1,18 @@
 <template>
-  <router-view msg="Hello Vue 3 + TypeScript + Vite" />
+  <router-view />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useStore } from "vuex";
 
 export default defineComponent({
   name: "App",
+  setup: () => {
+    const store = useStore();
+    // Load the list of people once (static data)
+    store.dispatch("getUsers");
+  }
 });
 </script>
 
