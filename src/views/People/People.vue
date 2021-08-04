@@ -28,45 +28,17 @@ export default defineComponent({
     const defaultPageSize = 25; // Initial page size
     const table = reactive({
       columns: [
-        {
-          label: "Name",
-          field: "name",
-          width: "20%",
-          sortable: true,
-          isKey: true,
-        },
-        {
-          label: "Age",
-          field: "age",
-          width: "5%",
-          sortable: true,
-        },
-        {
-          label: "Eye Color",
-          field: "eyeColor",
-          width: "20%",
-          sortable: true,
-        },
-        {
-          label: "Gender",
-          field: "gender",
-          width: "10%",
-          sortable: true,
-        },
-        {
-          label: "Preferences",
-          field: "preferences",
-          width: "30%",
-          sortable: false,
+        { label: "Name", field: "name", width: "20%", sortable: true, isKey: true },
+        { label: "Age", field: "age", width: "5%", sortable: true },
+        { label: "Eye Color", field: "eyeColor", width: "20%", sortable: true },
+        { label: "Gender", field: "gender", width: "10%", sortable: true },
+        { label: "Preferences", field: "preferences", width: "30%", sortable: false,
           display: (row: User) => {
             return (`${row.preferences.pet} / ${row.preferences.fruit}`);
           },
         },
         { // TODO: edit button here
-          label: "",
-          field: "",
-          width: "5%",
-        },
+          label: "", field: "", width: "5%" },
       ],
       totalRecordCount: tableTotal,
       rows: tableData,
