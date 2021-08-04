@@ -2,7 +2,7 @@
   <div class="nav-container">
     <!-- Navigation bar logo + title -->
     <div class="nav-header flex">
-      <div class="logo-container"><img src="../../assets/icons/logo.svg" alt="logo"></div>
+      <div class="logo-container flex"><img src="../../assets/icons/logo.svg" alt="logo"></div>
       <span>Alfonso Mateos</span>
     </div>
 
@@ -36,8 +36,7 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      // TODO: replace to navitems[0].path when dashboard is ready
-      if(!currentView.value) router.push("/people"); // Redirect to view if no current view
+      if(!currentView.value) router.push(props.navitems[0].path); // Redirect to view if no current view
     })
 
     return { currentView, changeView };

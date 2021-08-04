@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home/Home.vue";
-// import Dashboard from "../views/Dashboard/Dashboard.vue";
+import Dashboard from "../views/Dashboard/Dashboard.vue";
 import People from "../views/People/People.vue";
 
 const routes: any = [
@@ -9,10 +9,10 @@ const routes: any = [
     name: "Home",
     component: Home,
     children: [
-      // {
-      //   path: "/dashboard",
-      //   component: Dashboard,
-      // },
+      {
+        path: "/dashboard",
+        component: Dashboard,
+      },
       {
         path: "/people",
         component: People,

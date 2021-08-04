@@ -11,9 +11,11 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/vue-fontawesome": "^3.0.0-4",
+    "apexcharts": "^3.27.3",
     "sass": "^1.37.0",
     "vue": "^3.0.5",
     "vue-router": "^4.0.10",
+    "vue3-apexcharts": "^1.4.1",
     "vue3-table-lite": "^1.0.6",
     "vuex": "^4.0.2"
   },
