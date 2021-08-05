@@ -1,5 +1,9 @@
 <template>
-  <div class="container">
+  <div class="container flex-col">
+    <div class="table-search">
+      <searchbar @search-updated="onSearchUpdate" :placeholder="searchPlaceholder" />
+    </div>
+
     <div class="table-container">
       <vue-table-lite
         :is-static-mode="true"
@@ -15,13 +19,16 @@
 <script lang="ts">
 import { defineComponent, computed, reactive, ref } from "vue";
 import { User } from "../../models/user";
+import Searchbar from "../../components/SearchBar/Searchbar.vue";
 import { useStore } from "vuex";
 
 export default defineComponent({
   name: "People",
+  components: { Searchbar },
   setup() {
     const store = useStore();
     const people = computed(() => store.getters.getUsers);
+    const searchPlaceholder = "Search by name, age, eye color...";
     // Table data
     const tableData = ref(people.value.slice()); // Slice to get array instead of ref
     const tableTotal = computed(() => tableData.value.length);
@@ -43,7 +50,21 @@ export default defineComponent({
       totalRecordCount: tableTotal,
       rows: tableData,
     });
-    return { table, defaultPageSize, };
+
+    // Filter table data by all fields everytime the searchterm changes
+    const onSearchUpdate = (newSearchterm) => {
+      const searchTerm = newSearchterm.toLowerCase();
+      tableData.value = people.value.filter(person => 
+        person.name.toLowerCase().includes(searchTerm) ||
+        person.age.toString().includes(newSearchterm) ||
+        person.eyeColor.toLowerCase().includes(searchTerm) ||
+        person.gender.toLowerCase().includes(searchTerm) ||
+        person.preferences.pet.toLowerCase().includes(searchTerm) ||
+        person.preferences.fruit.toLowerCase().includes(searchTerm)
+      )
+    }
+
+    return { table, defaultPageSize, onSearchUpdate, searchPlaceholder };
   },
 });
 </script>
