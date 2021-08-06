@@ -5,7 +5,9 @@
     "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "lint": "eslint 'src/**/*.{js,vue}' --fix"
+    "lint": "eslint 'src/**/*.{js,vue}' --fix",
+    "cypress-run": "cypress run",
+    "cypress-open": "cypress open"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
