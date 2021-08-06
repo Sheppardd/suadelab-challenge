@@ -63,6 +63,7 @@ export default defineComponent({
     const onSearchUpdate = (newSearchterm) => {
       const searchTerm = newSearchterm.toLowerCase();
       tableData.value = people.value.filter(person => 
+        (searchTerm.length > 2 && person._id.toLowerCase().includes(searchTerm)) || // Only search by ID if more than 3 digits
         person.name.toLowerCase().includes(searchTerm) ||
         person.age.toString().includes(newSearchterm) ||
         person.eyeColor.toLowerCase().includes(searchTerm) ||
