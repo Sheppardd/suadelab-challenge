@@ -8,7 +8,8 @@
     <!-- Table -->
     <div class="table-container">
       <div class="flex justify-end buttons-container"><button class="app-button" @click="showModal = true">Edit Users</button></div>
-      <vue-table-lite class="table"
+      <vue-table-lite
+        class="table"
         :is-static-mode="true"
         :columns="table.columns"
         :rows="table.rows"
@@ -70,8 +71,8 @@ export default defineComponent({
         person.gender.toLowerCase().includes(searchTerm) ||
         person.preferences.pet.toLowerCase().includes(searchTerm) ||
         person.preferences.fruit.toLowerCase().includes(searchTerm)
-      )
-    }
+      );
+    };
     return { table, defaultPageSize, onSearchUpdate, searchPlaceholder, showModal };
   },
 });

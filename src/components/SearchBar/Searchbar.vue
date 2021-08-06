@@ -1,7 +1,11 @@
 <template>
   <div class="container flex">
     <font-awesome-icon icon="search" class="search-icon"/>
-    <input class="search-input" type="text" :placeholder="placeholder" v-model="searchTerm">
+    <input
+class="search-input"
+type="text"
+:placeholder="placeholder"
+v-model="searchTerm">
   </div>
 </template>
 
@@ -21,8 +25,8 @@ export default defineComponent({
     const searchTerm = ref("");
 
     watch(searchTerm, (newValue) => {
-      context.emit("search-updated", newValue)
-    })
+      context.emit("search-updated", newValue);
+    });
 
     return { searchTerm };
   }
