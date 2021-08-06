@@ -5,4 +5,3 @@ Feature: Dashboard view functionality
 
     Scenario: Check if both tables are rendered
     Then I see two chart components rendered
-    
