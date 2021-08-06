@@ -1,6 +1,8 @@
 module.exports = {
   "extends": [
-    "plugin:vue/vue3-recommended",
+    "plugin:vue/essential",
+    "eslint:recommended",
+    "@vue/typescript"
   ],
   "env": {
     "browser": true,
@@ -11,10 +13,10 @@ module.exports = {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "module"
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   },
   "rules": {
     "semi": ["error", "always"],
