@@ -76,7 +76,7 @@ export default {
         if(person.eyeColor === eyeColors.BLUE) pieChartData.series[0]++;
         else if (person.eyeColor === eyeColors.GREEN) pieChartData.series[1]++;
         else if ( person.eyeColor === eyeColors.BROWN) pieChartData.series[2]++;
-      })
+      });
     };
 
     // Filter list by pet preference
@@ -87,7 +87,7 @@ export default {
     // Filter list by age range
     const getAgeRange = (ageFrom: number, ageTo: number, list: User[]) => {
       return list.filter((person: User) => person.age > ageFrom && person.age <= ageTo).length;
-    }
+    };
 
     const getAgePetChart = () => {
       const pets = Object.values(pet); // Get PET object values to access them by index in the loop

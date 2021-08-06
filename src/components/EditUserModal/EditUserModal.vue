@@ -82,11 +82,11 @@ export default defineComponent({
         age: "",
         eyeColor: "",
         gender: "",
-        preferences: { pet: "", fruit: ""},
+        preferences: { pet: "", fruit: "" },
         location: { latitude: 0, longitude: 0 },
-      }
+      };
       return emptyPerson;
-    }
+    };
     // Person object to edit
     const person = ref(initializeEmptyPerson());
     // Update PERSON in store
@@ -100,10 +100,10 @@ export default defineComponent({
     watch(id, (newID) => {
       const result = people.value.find((person: User) => person._id === newID);
       // Watch out! Object.assign would still copy the ref of PREFERENCES and LOCATION
-      if(result) person.value = JSON.parse(JSON.stringify(result))
+      if(result) person.value = JSON.parse(JSON.stringify(result));
       else person.value = initializeEmptyPerson();
-    })
-    return {id, person,closeModal, updatePerson };
+    });
+    return { id, person,closeModal, updatePerson };
   }
 });
 </script>
