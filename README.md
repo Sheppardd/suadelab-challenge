@@ -55,6 +55,7 @@ npm run lint
 
 ## Running Cypress tests
 
+
 With GUI:
 ```
 npm run cypress-open
@@ -65,4 +66,7 @@ Without GUI:
 ```
 npm run cypress-run
 ```
-**Run all features**
+**Runs all features**
+
+
+**Please note that the server must be running in order for this to work**

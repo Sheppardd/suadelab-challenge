@@ -2,10 +2,10 @@
   <div class="container flex">
     <font-awesome-icon icon="search" class="search-icon"/>
     <input
-class="search-input"
-type="text"
-:placeholder="placeholder"
-v-model="searchTerm">
+      class="search-input"
+      type="text"
+      :placeholder="placeholder"
+      v-model="searchTerm">
   </div>
 </template>
 
