@@ -1,0 +1,12 @@
+@import "../../assets/scss/colours.scss";
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  .child-container {
+    padding: 20px 10px;
+    background-color: $secondary-light;
+    min-width: 1000px;
+  }
+}

@@ -52,3 +52,21 @@ npm run lint
 ```
 
 **Note**: this script also fixes the conflicts (--fix option)
+
+## Running Cypress tests
+
+
+With GUI:
+```
+npm run cypress-open
+```
+**Opens a GUI where you can choose a specific feature to run**
+
+Without GUI:
+```
+npm run cypress-run
+```
+**Runs all features**
+
+
+**Please note that the server must be running in order for this to work**

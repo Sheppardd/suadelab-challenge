@@ -1,0 +1,85 @@
+@import "../../assets/scss/colours.scss";
+
+.nav-container {
+  width: 300px;
+  min-width: 300px;
+  height: 100%;
+  background-color: $primary-dark;
+  padding: 20px;
+
+  .nav-header {
+    color: $general-white;
+    font-size: 18px;
+    margin: 10px 0 50px 0;
+
+    .logo-container {
+      width: 50px;
+      height: 50px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    span {
+      font-size: 24px;
+      font-weight: 700;
+      margin-left: 15px;
+    }
+  }
+
+  .nav-item {
+    border-radius: 3px;
+    margin: 8px 0;
+    padding: 10px 10px;
+    color: $general-white;
+    transition: background-color 0.05s ease-in-out;
+
+    span {
+      font-weight: 700;
+      margin-left: 15px;
+    }
+
+    .nav-item-icon {
+      width: 18px;
+      height: 18px;
+      transition: all 0.15s ease-out;
+    }
+
+    &:hover {
+      background-color: rgba(0,0,0, $alpha: 0.1);
+      cursor: pointer;
+    }
+  }
+  
+  .active {
+    background-color: $primary-medium !important; // Persist ACTIVE color over hover one
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .nav-container, .nav-item {
+    width: fit-content;
+    min-width: fit-content;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .nav-item span, .nav-header span {
+    display: none;
+  }
+  
+  .nav-container .nav-item .nav-item-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-container .nav-item {
+    width: 100%;
+  }
+}
